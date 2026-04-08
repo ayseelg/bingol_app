@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EAF2FF"
+    tools:context=".home.TumorAboutFragment">
+
+    <!-- Başlık -->
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🧠 Yapay Zeka Danışman Sistemi"
+        android:textSize="22sp"
+        android:textColor="#1976d2"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Model Seçim Kartı -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/modelCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="6dp"
+        app:layout_constraintTop_toBottomOf="@id/titleText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🤖 AI Model Seçimi"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Model butonları -->
+            <LinearLayout
+                android:id="@+id/modelButtonsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:weightSum="3">
+
+                <Button
+                    android:id="@+id/btnGemini"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="#1a73e8"
+                    android:text="🌌 Gemini Pro"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+                <Button
+                    android:id="@+id/btnGroq"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="#1a73e8"
+                    android:text="⚡ Groq Cloud"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+                <Button
+                    android:id="@+id/btnCohere"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@android:color/white"
+                    android:backgroundTint="#1a73e8"
+                    android:text="🚀 Cohere AI"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+            </LinearLayout>
+
+            <!-- Aktif Model Bilgisi -->
+            <TextView
+                android:id="@+id/activeModelText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aktif Model: Gemini Pro"
+                android:textColor="#1976d2"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Chat kutusu -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/chatCard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="6dp"
+        app:layout_constraintTop_toBottomOf="@id/modelCard"
+        app:layout_constraintBottom_toTopOf="@id/examplesCard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <ScrollView
+                android:id="@+id/chatScroll"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:id="@+id/chatBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"/>
+            </ScrollView>
+
+            <!-- Mesaj yazma alanı -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <EditText
+                    android:id="@+id/questionInput"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Sorunuzu yazın..."
+                    android:background="@drawable/rounded_edittext"
+                    android:padding="12dp"/>
+
+                <ImageButton
+                    android:id="@+id/sendBtn"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    app:tint="#1976d2"
+                    android:src="@android:drawable/ic_menu_send"
+                    android:contentDescription="Gönder"/>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Örnek Sorular -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/examplesCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="6dp"
+        app:layout_constraintBottom_toTopOf="@id/statsCard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="💡 Örnek Sorular"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Burada butonlarla örnek sorular listelenebilir -->
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:backgroundTint="#1a73e8"
+                android:text="🔍 Beyin tümörünün belirtileri nelerdir?" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Performans İstatistikleri -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/statsCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- space_evenly kaldırıldı, weight kullanıldı -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/totalQueries"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Toplam Sorgu: 0"
+                android:gravity="center"
+                android:textColor="#1976d2"/>
+
+            <TextView
+                android:id="@+id/fastestModel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="En Hızlı Model: -"
+                android:textColor="#1976d2"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Odaklanmış (focus) durum -->
+    <item android:state_focused="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/white"/>
+            <stroke android:width="2dp" android:color="#1976d2"/>
+            <corners android:radius="24dp"/>
+        </shape>
+    </item>
+
+    <!-- Basılı (pressed) durum -->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/white"/>
+            <stroke android:width="2dp" android:color="#1565c0"/>
+            <corners android:radius="24dp"/>
+        </shape>
+    </item>
+
+    <!-- Normal durum -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/white"/>
+            <stroke android:width="2dp" android:color="#e0e6ed"/>
+            <corners android:radius="24dp"/>
+        </shape>
+    </item>
+</selector>

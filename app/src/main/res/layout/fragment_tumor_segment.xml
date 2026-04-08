@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".home.TumorSegmentFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:gravity="center_horizontal">
+
+        <!-- Başlık -->
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Beyin Tümörü Segmentasyonu"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- Fotoğraf seçme -->
+        <Button
+            android:id="@+id/selectImageBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fotoğraf Seç"
+            android:textColor="@android:color/white"
+            android:backgroundTint="#1a73e8"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- Segmentasyon butonu -->
+        <Button
+            android:id="@+id/segmentBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Segmentasyonu Yap"
+            android:textColor="@android:color/white"
+            android:backgroundTint="#1a73e8"
+            android:layout_marginBottom="15dp"/>
+
+        <!-- Mesaj alanı -->
+        <TextView
+            android:id="@+id/messageText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FF0000"
+            android:textSize="16sp"
+            android:layout_marginBottom="15dp"/>
+
+        <!-- Orijinal görüntü -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Orijinal Görüntü"
+            android:textStyle="bold"/>
+        <ImageView
+            android:id="@+id/originalImage"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:layout_marginBottom="15dp"
+            android:background="@android:color/darker_gray"/>
+
+        <!-- Segmentasyon maskesi -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Segmentasyon Maskesi"
+            android:textStyle="bold"/>
+        <ImageView
+            android:id="@+id/maskImage"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:background="@android:color/darker_gray"/>
+    </LinearLayout>
+</ScrollView>

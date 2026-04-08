@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navHome"
+        android:title="Anasayfa"/>
+    <item
+        android:id="@+id/navTumorDetect"
+        android:title="Tümör Tespiti"/>
+    <item
+        android:id="@+id/navTumorSegment"
+        android:title="Tümör Segmentasyonu"/>
+    <item
+        android:id="@+id/navTumorAbout"
+        android:title="Tümör Hakkında"/>
+</menu>
